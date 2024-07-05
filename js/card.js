@@ -44,10 +44,14 @@ export const card = (() => {
                 lists.set(v[0], v[1]);
             });
         }
-
+        setTimeout(() => {
+console.log(lists,'inilsit')
+        }, 1000)
         lists.forEach((v, k) => {
             const regex = new RegExp(`\\${k}(?=\\S)(.*?)(?<!\\s)\\${k}`, 'gs');
+             console.log(input, k,v, regex)
             input = input.replace(regex, v);
+           
         });
 
         return input;
